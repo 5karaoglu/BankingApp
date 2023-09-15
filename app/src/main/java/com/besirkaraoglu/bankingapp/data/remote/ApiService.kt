@@ -8,6 +8,6 @@ import retrofit2.http.GET
 interface ApiService {
 
     @GET(BASE_PATH)
-    fun getData(): Response<RequestResult>
+    suspend fun getData(): Response<List<RequestResult>>
 
 }

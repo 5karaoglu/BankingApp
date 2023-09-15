@@ -1,10 +1,10 @@
 package com.besirkaraoglu.bankingapp.data.remote
 
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flow
+import com.besirkaraoglu.bankingapp.model.RequestResult
+import retrofit2.Response
 
-class RemoteDataSourceImpl: RemoteDataSource {
-    override fun getData(): Flow<Result<Any>> = flow{
-
-    }
+class RemoteDataSourceImpl(
+    private val apiService: ApiService
+): RemoteDataSource {
+    override suspend fun getData(): Response<List<RequestResult>> = apiService.getData()
 }
